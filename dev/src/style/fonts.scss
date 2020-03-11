@@ -1,0 +1,4 @@
+@import "mixin-font";
+
+@include font-face("SF-Heavy", "../fonts/SF/SF-Compact-Display-Heavy");
+@include font-face("PTSans", "../fonts/PTSans/PTSans-Regular");

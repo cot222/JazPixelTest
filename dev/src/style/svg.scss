@@ -1,0 +1,61 @@
+svg{
+    //Contact
+    &.contact-email {
+        fill: #505050;;
+        width: 18px;
+        height: 12px;
+    }
+
+    &.contact-phone {
+        fill: #505050;;
+        width: 16px;
+        height: 18px;
+    }
+
+    &.contact-vk {
+        fill: #505050;;
+        width: 20px;
+        height: 12px;
+    }
+
+    &.contact-facebook {
+        fill: #505050;;
+        width: 9px;
+        height: 19px;
+    }
+
+    //Slider
+    &.slider-nearest {
+        width: 11px;
+        height: 15px;
+    }
+
+    &.slider-hottest {
+        width: 15px;
+        height: 17px;
+    }
+
+    &.slider-tour {
+        width: 16px;
+        height: 16px;
+    }
+
+    //Bookmark
+    &.bookmark {
+        width: 9px;
+        height: 10px;
+    }
+
+    //Map
+    &.map-position {
+        width: 21px;
+        height: 29px;
+    }
+
+    &.map-event {
+        width: 16px;
+        height: 15px;
+    }
+}
+
+

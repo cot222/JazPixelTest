@@ -1,0 +1,23 @@
+//colors
+$gradient : linear-gradient(26.97deg, #FF971C 20.96%, #FF6600 104.08%);
+$orange : #FF781C;
+$bg-dark: #151515;
+$bg-black: #000000;
+$line : #2a2a2a;
+$white: #FFFFFF;
+$txt-date: #D5D5D5;
+
+
+//font size 
+$h1-size : 5rem; //40px
+$h2-size : 3.25rem; //26px
+$title-media-size : 2.25rem; //18px
+$txt-size : 2rem; //16px
+$date-location-size : 1.75rem; //14px
+
+@mixin h1-el {
+    font-family: SF-Heavy;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FFFFFF;
+} 
