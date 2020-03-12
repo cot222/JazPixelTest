@@ -15,9 +15,9 @@ $title-media-size : 2.25rem; //18px
 $txt-size : 2rem; //16px
 $date-location-size : 1.75rem; //14px
 
-@mixin h1-el {
-    font-family: SF-Heavy;
-    font-size: 40px;
-    line-height: 48px;
-    color: #FFFFFF;
-} 
+$size60: 7.5rem;
+$size50: 6.25rem;
+$size40: 5rem;
+$size16: 2rem;
+$size14: 1.75rem;
+$grid-point: 8px;

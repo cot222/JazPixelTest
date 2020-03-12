@@ -18,22 +18,30 @@ let path = {
         js: 'public/js/',
         css: 'public/css/',
         svg: 'public/svg/',
-        fonts: 'public/fonts'
+        fonts: 'public/fonts',
+        img: 'public/img'
     },
     src: {
         htmlStart: 'dev/src/html/index.html',
         html: 'dev/src/html/*.html',
-        js: 'dev/src/js/script.js',
+        js: {
+            mainScript: 'dev/src/js/script.js',
+            libJquery: 'dev/src/libs/jquery/dist/jquery.min.js',
+            libSlick: 'dev/src/libs/slick-carousel/slick/slick.min.js'
+        },
         style: 'dev/src/style/styles.scss',
         svg: 'dev/src/svg/*.svg',
-        fonts: 'dev/src/fonts/**/*.{woff,woff2,txt,ttf,otf}'
+        fonts: 'dev/src/fonts/**/*.{woff,woff2,txt,ttf,otf}',
+        img: 'dev/src/img/*.{png,jpg,jpeg}'
+
     },
     watch: {
         html: 'dev/src/**/*.html',
         js: 'dev/src/js/**/*.js',
         css: 'dev/src/style/**/*.scss',
         svg: 'dev/src/svg/*.svg',
-        fonts: 'dev/src/**/*.{woff,woff2,txt,ttf,otf}'
+        fonts: 'dev/src/**/*.{woff,woff2,txt,ttf,otf}',
+        img: 'dev/src/img/**/*.{png,jpg,jpeg}'
     },
     template: {
         svgSprite: 'dev/src/svg/template.html',
@@ -77,11 +85,19 @@ gulp.task('css:build', function () {
         .pipe(webserver.reload({ stream: true }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleanCss()) // минимизируем CSS
-        .pipe(gulp.dest(path.build.css)); // выгружаем в build
+        .pipe(gulp.dest(path.build.css)) // выгружаем в build
+        .pipe(webserver.reload({ stream: true }))
+});
+
+gulp.task('image:build', function () {
+    return gulp.src(path.src.img) 
+        .pipe(gulp.dest(path.build.img)) 
+        .pipe(webserver.reload({ stream: true }));
 });
 
 gulp.task('js:build', function () {
-    return gulp.src(path.src.js) // получим файл script.js
+    return gulp.src([path.src.js.libJquery, path.src.js.libSlick, path.src.js.mainScript]) // получим файл script.js
+        .pipe(concat("script.js"))
         .pipe(gulp.dest(path.build.js))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify()) // минимизируем js
@@ -123,7 +139,8 @@ gulp.task('build',
         'css:build',
         'js:build',
         'svg:build',
-        'fonts:build'
+        'fonts:build',
+        'image:build'
     )
 );
 
@@ -132,6 +149,7 @@ gulp.task('watch', function () {
     gulp.watch(path.watch.css, gulp.series('css:build'));
     gulp.watch(path.watch.js, gulp.series('js:build'));
     gulp.watch(path.watch.svg, gulp.series('svg:build'));
+    gulp.watch(path.watch.img, gulp.series('image:build'));
 });
 
 gulp.task('watch:webserver', gulp.series(

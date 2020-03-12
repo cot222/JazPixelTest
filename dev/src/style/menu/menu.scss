@@ -1,0 +1,16 @@
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 767px;
+    min-width: 320px;
+    height: $grid-point*6;
+    padding-left: 28px;
+    padding-right: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bg-black;
+
+    @import "menu-content/menu-content.scss";
+}

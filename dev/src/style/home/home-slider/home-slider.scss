@@ -1,0 +1,158 @@
+.home-slider {
+    height: 100%;
+    max-height: 432px;
+    background: $bg-black;
+    
+    .slickSlider {
+        height: 100%;
+        outline: none;
+        
+        .slickSlider-item {
+            height: 100%;
+            padding: 24px 20px 40px 20px;
+            position: relative;
+
+            .item-info {
+                position: absolute;
+                height: auto;
+                max-height: 100%;
+                width: 100%;
+                max-width: 147px;
+                top: $grid-point*5;
+                bottom: $grid-point*8;
+                left: $grid-point*3;
+                right: $grid-point*20;
+                z-index: 100;
+
+                .info-top {
+                    display: flex;
+                    align-items: center;
+
+                    h3 {
+                        margin-left: 11px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        font-family: SF-Compact;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #FFFFFF;
+                    }
+                }
+
+                .info-bottom {
+                    position: absolute;
+                    bottom: 0;
+                    //ссылка
+                    .info-bottom__link {
+                        font-family: SF-Heavy;
+                        font-size: $size14;
+                        line-height: $size16;
+                        color: $orange;
+                        text-decoration: none;
+                    }
+                    //для первого главного слайда
+                    &.main {
+                        .info-bottom__title {
+                            font-family: Uni-Heavy;
+                            font-size: $size60;
+                            line-height: $size50;
+                            margin-bottom: $grid-point*3;
+                            color: $white;
+                        }
+                    }
+                    //горячее,ближайшие,тур
+                    &.hottest,
+                    &.nearest,
+                    &.tour {
+                        .info-bottom__title {
+                            font-family: SF-Heavy;
+                            font-size: $size40;
+                            line-height: 47px;
+                            margin-bottom: $grid-point*3;
+                            color: $white;
+                        }
+                    }
+
+                }
+            }
+
+            .item-back {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                bottom: 40px;
+                width: auto;
+                height: auto;
+                max-height: 100%;
+
+                img {
+                    position: relative;
+                    max-height: 100%;
+                    border-radius: 8px;
+                    opacity: .4;
+                }
+            }
+        }
+
+        //кастамизировал стандартные настройки слик слайдера
+        .slick-list.draggable {
+            height: 100%;
+            outline: none;
+
+            .slick-track {
+                height: 100%;
+
+                .slick-item {
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+        //кастамизировал стандартные настройки слик слайдера(точки)
+        .slick-dots {
+            position: absolute;
+            width: 100%;
+            bottom: 17px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                width: 6px;
+                height: 6px;
+                margin-right: 6px;
+                padding: 0;
+                border-radius: 50%;
+                background: #333333;
+                font-size: 0;
+                text-align: center;
+                outline: none;
+
+
+                &.slick-active {
+                    background: #FF781C;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                button {
+                    display: none;
+                    // width: 100%;
+                    // height: 100%;
+                    // padding: 0;
+                    // margin: 0;
+                    // background: none;
+                    // border: none;
+                    // outline: none;
+                }
+            }
+        }
+    }
+}

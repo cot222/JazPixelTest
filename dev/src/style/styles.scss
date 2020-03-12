@@ -4,4 +4,10 @@
 @import "svg"; //подключение svg стилей
 @import "fonts"; //подключение шрифтов
 
+//slick styles 
+// @import "../libs/slick-carousel/slick/slick-theme.scss";
+@import "../libs/slick-carousel/slick/slick.scss";
+
 //подключение основного файла стилей
+@import "home/home.scss";
+@import "menu/menu.scss";

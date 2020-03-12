@@ -1,7 +1,8 @@
 html{
     height: 100%;
-    font-size: 1px;
+    font-size: 8px;
     box-sizing: border-box;
+    color: white;
 }
 *::before,*::after,* {
     box-sizing: inherit;
@@ -13,11 +14,17 @@ body {
     margin: 0;
     padding: 0;
     outline: none;
-    background: $bg-dark;
+    background: $white;
+    display: flex;
+    flex-direction: column;
     
 }
 //контейнер для центрирования формы
 .wrapper {
     width: 100%;
+    max-width: 767px;
+    min-width: 320px;
     height: 100%;
+    margin: auto;
+    background: $bg-dark;
 }
