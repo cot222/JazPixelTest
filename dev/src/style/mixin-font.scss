@@ -7,7 +7,6 @@
         @if $asset-pipeline == true {
             src: font-url('#{$file-path}.eot');
             src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
-            font-url('#{$file-path}.ttf') format('truetype'),
             font-url('#{$file-path}.svg##{$font-family}') format('svg'),
             font-url('#{$file-path}.otf') format('truetype');
         } @else {

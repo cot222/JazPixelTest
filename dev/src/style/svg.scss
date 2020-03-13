@@ -45,6 +45,14 @@ svg{
         width: 9px;
         height: 10px;
     }
+    &.bookmark-active {
+        width: 15px;
+        height: 17px;
+        
+        path {
+            fill: $white;
+        }
+    }
 
     //Map
     &.map-position {

@@ -35,6 +35,11 @@ const mainScriptFunc = function() {
     }
     bookClick();
 
+    //Установка высоты букмарка в соответствии с высотой блока
+    function compareBookHeight() {
+
+    }   
+
     //функция отображения карты
     function showMap() {
         var myLatlng = new google.maps.LatLng(-34.397, 150.644);

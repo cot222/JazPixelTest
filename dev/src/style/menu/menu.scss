@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     background: $bg-black;
+    z-index: 9999;
 
     @import "menu-content/menu-content.scss";
 }
