@@ -1,0 +1,65 @@
+.bottom-panel {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 23px;
+    padding-right: 23px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 767px;
+    height: 42px;
+    bottom: 72px;
+
+
+    .panel-events {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 100%;
+        border-radius: 50%;
+        background: black;
+
+        .events-img {
+            width: 16px;
+            height: 15px;
+            background: url("/svg/sprite.svg#map-event") center center no-repeat;
+        }
+
+        .events-num {
+            position: absolute;
+            top: 0;
+            right: -5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-height: 15px;
+            padding: 5px;
+            border-radius: 7.5px;
+            background: linear-gradient(0deg, #2459E2, #2459E2), #2E61E5;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            font-family: SF-Heavy;
+            font-size: 8px;
+            line-height: 10px;
+        }
+        
+    }
+
+    .panel-coordinate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 100%;
+        border-radius: 50%;
+        background: black;
+
+        .coordinate-img {
+            width: 13px;
+            height: 18px;
+            background: url("/svg/sprite.svg#map-position") center center no-repeat;
+        }
+    }
+}
+

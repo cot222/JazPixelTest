@@ -1,6 +1,31 @@
-@import "mixin-font";
+// @import "mixin-font";
 
-@include font-face("SF-Heavy", "../fonts/SF/SF-Compact-Display-Heavy");
-@include font-face("SF-Compact", "../fonts/SF/SF-Compact-Display-Regular");
-@include font-face("Uni-Regular", "../fonts/Uni/UniNeueRegular");
-@include font-face("Uni-Heavy", "../fonts/Uni/UniNeueHeavy");
+// @include font-face("SF-Heavy", "../fonts/SF/SF-Compact-Display-Heavy");
+// @include font-face("SF-Compact", "../fonts/SF/SF-Compact-Display-Regular");
+// @include font-face("Uni-Regular", "../fonts/Uni/UniNeueRegular");
+// @include font-face("Uni-Heavy", "../fonts/Uni/UniNeueHeavy");
+
+@font-face {
+    font-family: SF-Heavy;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/SF/SF-Compact-Display-Heavy.otf');
+}
+@font-face {
+    font-family: SF-Compact;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/SF/SF-Compact-Display-Regular.ttf');
+}
+@font-face {
+    font-family: Uni-Regular;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Uni/UniNeueRegular.ttf');
+}
+@font-face {
+    font-family: Uni-Heavy;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Uni/UniNeueHeavy.ttf');
+}

@@ -27,4 +27,28 @@ body {
     // height: 100%;
     margin: auto;
     background: $bg-dark;
+
+    .showMenuItem {
+        display: block;
+        animation: showBottomTop .5s ease-in-out;
+    }
+    
+    @keyframes showBottomTop {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes hideTopBottom {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 }
+

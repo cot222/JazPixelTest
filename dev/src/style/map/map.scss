@@ -1,0 +1,14 @@
+.map { 
+    display: none;
+    height: 100%;
+    position: relative;
+
+    #MapBlock {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    @import "bottom-panel/bottom-panel.scss";
+    @import "events-block/events-block.scss";
+}

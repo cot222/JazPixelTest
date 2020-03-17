@@ -1,0 +1,276 @@
+.events-block {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, .8);
+    z-index: 999;
+    transition: .5s;
+    bottom: -100vh;
+
+    &.active {
+        bottom: 0;
+        display: block;
+        animation: showEventsList .5s ease-in-out;
+    }
+
+    @keyframes showEventsList {
+        from {
+            bottom: -100vh;
+        }
+        to {
+            bottom: 0;
+        }
+    }
+
+    .block-title {
+        .block-title__h2 {
+            font-family: SF-Heavy;
+            font-size: $h2-size;
+            line-height: 31px;
+            padding-left: 24px;
+            margin-bottom: 11px;
+            color: #FFFFFF;
+        }
+
+        .block-title__p {
+            font-family: SF-Heavy;
+            font-size: $date-location-size;
+            line-height: 16px;
+            margin-bottom: 22px;
+            padding-left: 24px;
+            color: #D5D5D5;
+        }
+
+        .block-border {
+            margin: 0 auto 8px auto;
+            background: $orange;
+            border-radius: 5px;
+            width: 32px;
+            height: 3px;
+        }
+    }
+
+    .block-content {
+        padding-bottom: 100px;
+        background: $bg-dark;
+
+        .content-item { 
+            position: relative;
+            height: auto;
+            min-height: 128px;
+            border-top: 1px solid #2A2A2A;
+            border-bottom: 1px solid #2A2A2A;
+            overflow: hidden;
+    
+            &:last-child {
+                border-bottom: none;
+            }
+    
+            //блок с информацией(картинка и текст)
+            .item-info {
+                position: relative;
+                top: 0;
+                height: 100%;
+                padding: $grid-point*3 11px 24px 12px;
+                transition: .5s;
+    
+                &.active {
+                    transform: translateX(128px);
+                }
+                //картинка на фоне
+                .info-background {
+                    position: absolute;
+                    left: 12px;
+                    width: 100%;
+                    max-width: 84px;
+                    height: 100%;
+                    max-height: 85px;
+                    z-index: 0;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                        opacity: .4;
+                    }
+                }
+                //текстовый блок
+                .info-text {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    z-index: 100;
+                    padding-left: 60px;
+                    height: auto;
+                    min-height: 168px;
+    
+                    .info-text__h3 {
+                        font-family: SF-Heavy;
+                        font-size: 18px;
+                        line-height: 21px;
+                        margin-bottom: 4px;
+                        color: $white;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis; 
+                    }
+    
+                    .info-text__p {
+                        font-family: SF-Heavy;
+                        font-size: 14px;
+                        line-height: 16px;
+                        margin-bottom: 23px;
+                        color: $txt-date;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis; 
+                    }
+                }
+            }
+    
+            //выезжающий блок букмарк
+            .bookmark-block {
+                position: absolute;
+                top: 0;
+                width: 128px;
+                height: 100%;
+                min-height: 128px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(26.66deg, #FF971C 20.96%, #FF6600 104.08%);
+                transform: translateX(-128px);
+                transition: .5s;
+                z-index: 100;
+    
+                &.active {
+                    transform: translateX(0);
+                }
+            }
+            //кнопка букмарка
+            .bookmark-btn {
+                position: absolute;
+                top: $grid-point*3;
+                right: 12px;
+                width: 9px;
+                height: 10px;
+                background: url(/svg/sprite.svg#bookmark) center center no-repeat;
+            }
+
+            .event-block {
+                position: absolute;
+                top: $grid-point*3;
+                right: 12px;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background: linear-gradient(0deg, #2459E2, #2459E2), #2E61E5;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            }
+    
+            //video block
+            &.video {
+                position: relative;
+                height: auto;
+                min-height: 200px;
+    
+                .bookmark-block {
+                    min-height: 180px;
+                }
+    
+                .item-info {
+                    padding-right: 25px;
+    
+                    //картинка на фоне
+                    .info-background {
+                        width: 100%;
+                        max-width: 189.84px;
+                        height: 100%;
+                        max-height: 125.03px;
+    
+                        img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 8px;
+                            opacity: .4;
+                        }
+                    }
+    
+                    .info-text {
+                        position: relative;
+                        z-index: 100;
+                        top: 93px;
+                        right: 25px;
+                        left: 0;
+                        max-width: 100%;
+    
+                        .info-text__h3 {
+                            margin-top: 0;
+                            margin-bottom: $grid-point;
+                            line-height: 21px;
+                            overflow: hidden;
+                            white-space: pre-wrap;
+                            text-overflow: ellipsis; 
+                        }
+                    }
+                }
+            }
+    
+            &.event {
+                position: relative;
+                height: auto;
+                // min-height: 250px;
+                // padding-bottom: 24px;
+    
+                .item-info {
+                    position: relative;
+                    padding-right: 34px;
+                    
+                    //картинка на фоне
+                    .info-background {
+                        width: 100%;
+                        max-width: 140px;
+                        height: 100%;
+                        max-height: 168px;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 8px;
+                            opacity: .4;
+                        }
+                    }
+    
+                    .info-text {
+                        position: relative;
+                        z-index: 100;
+                        top: 0px;
+                        right: 25px;
+                        left: 0;
+                        max-width: 100%;
+    
+                        .info-text__h3 {
+                            font-family: Uni-Heavy;
+                            font-size: 22px;
+                            line-height: 26px;
+                            margin-top: 17px;
+                            overflow: hidden;
+                            white-space: pre-wrap;
+                            text-overflow: ellipsis; 
+                        }
+    
+                        .info-text__p {
+                            position: relative;
+                            overflow: hidden;
+                            white-space: pre-wrap;
+                            text-overflow: ellipsis; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}       //общий блок для букмарка и информации
