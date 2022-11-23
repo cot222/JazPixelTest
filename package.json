@@ -11,7 +11,7 @@
   "author": "Andrew Rusetskii",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-cheerio": "^0.6.3",
